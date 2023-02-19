@@ -7,4 +7,14 @@ for j in range(len(a)):
         if a[j] + a[i] == target and i != j:
             print(j,i)
 
+# A faster version is provided below
+nums = [2,7,11,15]
+target = 17
 
+
+d = {}
+for i,j in enumerate(nums):
+    r = target - j
+    if r in d:
+        print([d[r], i])
+    d[j] = i
