@@ -5,4 +5,33 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        return all(s.count(x) == t.count(x) for x in 'abcdefghijklmnopqrstuvwxzy')
+        return all(s.count(x) == t.count(x) for x in 'abcdefghijklmnopqrstuvwxyz')
+
+# create an instance of the Solution class
+solution = Solution()
+
+# call the isAnagram function with two string arguments
+result = solution.isAnagram("anagram", "nagaram")
+
+# print the result
+print(result)  # This should output "True"
+
+
+#another Version written by the help of ChatGPT
+
+
+def is_anagram(s, t):
+    if len(s) != len(t):
+        return False
+    char_freq = {}
+    for char in s:
+        char_freq[char] = char_freq.get(char, 0) + 1
+    for char in t:
+        if char not in char_freq or char_freq[char] == 0:
+            return False
+        char_freq[char] -= 1
+    return True
+
+s = "racecar"
+t = "carrace"
+print(is_anagram(s, t))
