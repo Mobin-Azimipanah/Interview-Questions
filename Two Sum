@@ -4,7 +4,7 @@ i=0
 for j in range(len(a)):
     i = j
     for i in range(len(a)-j):
-        if a[j] + a[i] == target and i !== j:
+        if a[j] + a[i] == target and i != j:
             print(j,i)
 
 
